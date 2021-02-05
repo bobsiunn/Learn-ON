@@ -32,7 +32,7 @@ R: All
 R: Yongwook Lee, Juhyun Song  
 ~2/4: Wireframe  
 ~2/7: Design  
-~2/14: First check and share progress to backend developer
+~2/14: First check and share progress to backend developer  
 ~2/17: Development deadline
   
 2. back  
