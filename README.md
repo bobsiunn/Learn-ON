@@ -4,7 +4,7 @@ Learn-ON
 Online Re-Learning assistant "Learn ON"'s repository  
 온라인 재학습 어시스턴트 "Learn ON"의 저장소  
 
-# flie list
+# flie list 
 
 1. front  
 R: Yonghwook Lee, Juhyun Song, Lee Jeong Min  
@@ -47,5 +47,5 @@ R: skyriver228
 ~2/19: Second modeling (link text data with specific time in video data)  
   
 4. db  
-R: bob.siunn, Sarah Son  
+R: bob.siunn, Sarah Son   
 ~2/10: Data Crawling, pretreatment  
