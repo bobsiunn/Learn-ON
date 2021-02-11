@@ -4,10 +4,17 @@ Learn-ON
 Online Re-Learning assistant "Learn ON"'s repository  
 온라인 재학습 어시스턴트 "Learn ON"의 저장소  
 
+# R&R  
+
+1. front-end developer: Yongwook Lee, Juhyun Song  
+2. back-end developer: Lee Jeong Min  
+3. ml developer: skyriver228
+4. data engineer: bob.siunn, Sarah Son  
+
 # flie list 
 
 1. front  
-R: Yonghwook Lee, Juhyun Song, Lee Jeong Min  
+R: Yongwook Lee, Juhyun Song, Lee Jeong Min  
 = file for storing HTML,CSS,JS code  
 = HTML,CSS,JS 코드를 저장하는 파일  
   
