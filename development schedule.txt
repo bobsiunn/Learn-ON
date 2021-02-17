@@ -1,0 +1,23 @@
+# Schedule
+
+1. front  
+R: Yongwook Lee, Juhyun Song  
+~2/4: Wireframe  
+~2/7: Design  
+~2/14: First check and share progress to backend developer  
+~2/17: Development deadline
+  
+2. back  
+R: Lee Jeong Min  
+~2/19: Development deadline  
+  
+3. ml  
+R: skyriver228  
+~2/6: NLP research  
+~2/10: DB set up  
+~2/15: First modeling (text data segement)  
+~2/19: Second modeling (link text data with specific time in video data)  
+  
+4. db  
+R: bob.siunn, Sarah Son   
+~2/10: Data Crawling, pretreatment  
