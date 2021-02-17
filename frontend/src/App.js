@@ -1,5 +1,5 @@
 import React from 'react';
-import Intro1 from "./pages/intro1";
+import Intro1 from "./pages/intro";
 
 class App extends React.Component {
 
@@ -18,8 +18,7 @@ class App extends React.Component {
     const {username} = this.state;
     return (
         <div className="App">
-          {/*<Intro1/>*/}
-          {username ? `Hello ${username}` : 'Hello World'}
+          <Intro1/>
         </div>
     );
     ;
