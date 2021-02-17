@@ -1,0 +1,31 @@
+# flie list 
+
+1. design
+
+R: Yongwook Lee  
+= file for storing UIUX design code
+main language: JS, CSS
+
+2. front_server
+
+R: Juhyun Song, Lee Jeong Min
+= file for storing front end process code
+main language: JS, Node.JS
+  
+3. api_server
+
+R: Lee Jeong Min, skyriver228 
+= file for storing code about ML NLP process and recall AWS API  
+main language: Python, Node.JS  
+  
+4. db  
+
+R: skyriver228, bob.siunn, Lee Jeong Min  
+= file for storing STT text data and AWS API output
+main language: SQL
+
+5. test_data
+
+R: all
+= file for storing video, sound, text data to test our code
+main language: None
