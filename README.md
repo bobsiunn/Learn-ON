@@ -2,6 +2,7 @@ Learn-ON
 ==========
 AI-based online re-education assistent
  
+![ex_screenshot](./readimg/first page.png)
 
 # Service background  
 
