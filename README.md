@@ -15,6 +15,8 @@ AI-based online re-education assistent
 |**skyriver228** | <center>Biomedical Convergence Engineering </center> | ML Modeling |
 |**Sarah Son** | <center>BA </center> | Data collecting and documentation |
 
+<h3> 2. Introduction </h3>
+<div id="about_Introduction">
 
 
 # Service background  
