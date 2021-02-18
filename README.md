@@ -1,7 +1,7 @@
 Learn-ON
 ==========
-
-온라인 재학습 어시스턴트 "Learn ON"  
+AI-based online re-education assistent
+ 
 
 # Service background  
 
