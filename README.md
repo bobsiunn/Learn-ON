@@ -4,6 +4,19 @@ AI-based online re-education assistent
  
 ![ex_screenshot](./readimg/first_page.png)
 
+<h3> 1. R&R </h3>
+<div id="about_team">
+
+|  <center>Name</center> |  <center>Major</center> |  <center>Roll</center> |
+|:--------|:--------:|--------:|
+|**bob.siunn** | <center>BA & CS </center> |Data selection and engineering |
+|**Yongwook Lee** | <center>CS </center> |UIUX design and front end developer |
+|**Lee Jeong Min** | <center>CS </center> |Server deployment and link |
+|**skyriver228** | <center>Biomedical Convergence Engineering </center> | ML Modeling |
+|**Sarah Son** | <center>BA </center> | Data collecting and documentation |
+
+
+
 # Service background  
 
 코로나 19 이후 거리두기가 실행되면서, 오프라인으로 이루어지던 학습의 대부분이 온라인 강의로 전환되고 있습니다.  
