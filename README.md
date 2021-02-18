@@ -18,6 +18,8 @@ AI-based online re-education assistent
 <h3> 2. Introduction </h3>
 <div id="about_Introduction">
 
+![ex_screenshot](./readimg/LearnON_Introduction.png)
+
 
 # Service background  
 
