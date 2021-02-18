@@ -2,7 +2,7 @@ Learn-ON
 ==========
 AI-based online re-education assistent
  
-![ex_screenshot](./readimg/first page.png)
+![ex_screenshot](./readimg/first_page.png)
 
 # Service background  
 
