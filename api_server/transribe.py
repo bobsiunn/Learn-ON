@@ -1,21 +1,28 @@
 from __future__ import print_function
+import pandas as pd
 import time
 import boto3
 
 transcribe = boto3.client('transcribe')
-job_name = "kpmg-transcribe2"
+job_name = "kpmg-transcribe30"
 job_uri = "https://kpmg-gobongbob.s3.us-east-2.amazonaws.com/input_video/example.mp4"
+file_format = "kpmg-transcribe30"
+
 transcribe.start_transcription_job(
     TranscriptionJobName=job_name,
     Media={'MediaFileUri': job_uri},
-    MediaFormat='mp4',
+    MediaFormat = 'mp4',
     LanguageCode='en-US'
 )
-
+  
 while True:
-    status = transcribe.get_transcription_job(TranscriptionJobName=job_name)
-    if status['TranscriptionJob']['TranscriptionJobStatus'] in ['COMPLETED', 'FAILED']:
+    result = transcribe.get_transcription_job(TranscriptionJobName=job_name)
+    if result['TranscriptionJob']['TranscriptionJobStatus'] in ['COMPLETED', 'FAILED']:
         break
     print("Not ready yet...")
     time.sleep(5)
-print(status)
+    
+if result['TranscriptionJob']['TranscriptionJobStatus'] == "COMPLETED":
+    data = pd.read_json(result['TranscriptionJob']['Transcript']['TranscriptFileUri'])
+
+print(data['results'][1][0]['transcript'])
