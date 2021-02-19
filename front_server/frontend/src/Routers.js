@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import SignIn from "./pages/Intro-SignIn";
 import SignUp from "./pages/Intro-SignUp";
 import ChooseSubject from "./pages/instructor/ChooseSubject";
+import UploadFile from "./pages/instructor/UploadFile";
 
 function Routers({ location }) {
     return (
@@ -22,6 +23,7 @@ function Routers({ location }) {
                         />
                         <Route path="/signup" component={SignUp} />
                         <Route path="/instructor/chooseSubject" component={ChooseSubject} />
+                        <Route path="/instructor/uploadFile" component={UploadFile} />
                     </Switch>
                 </section>
             </CSSTransition>

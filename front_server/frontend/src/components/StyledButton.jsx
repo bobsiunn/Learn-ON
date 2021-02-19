@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Color from "../styles/Color";
+import OuterShadow from "../styles/OuterShadow";
 export default styled.button`
   display: flex;
   align-items: center;
@@ -19,4 +20,5 @@ export default styled.button`
     outline: 0;
   }
   ${Color}
+  ${OuterShadow}
 `;
