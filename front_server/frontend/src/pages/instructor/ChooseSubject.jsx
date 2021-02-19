@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Frame from "../../components/Frame";
 import StyledButton from "../../components/StyledButton";
 import Wrapper from "../../components/Wrapper";
@@ -6,7 +6,8 @@ import styled from "styled-components";
 import {Icon} from '@iconify/react';
 import chevronDown from '@iconify/icons-akar-icons/chevron-down';
 import Color from "../../styles/Color";
-
+import {Link} from "react-router-dom";
+import OuterShadow from "../../styles/OuterShadow";
 /*TODO: Choose your subject 이름 바뀌게 해야함*/
 
 class ChooseSubject extends Component {
@@ -38,9 +39,11 @@ class ChooseSubject extends Component {
                         </Subjects>}
                         {this.state.isHidden && <div style={{height:'15vh'}}></div>}
                     </div>
-                    <StyledButton width={'20vh'} height={'5vh'} style={{marginLeft: '20vh'}}>
-                        Upload file
-                    </StyledButton>
+                    <Link to={"/instructor/uploadfile"}>
+                        <StyledButton width={'20vh'} height={'5vh'} style={{marginLeft: '20vh', fontSize: '25px'}}>
+                            Upload file
+                        </StyledButton>
+                    </Link>
                 </Frame>
             </Wrapper>
         );
@@ -69,6 +72,7 @@ const Dropdown = styled.button`
     outline: 0;
   }
   ${Color}
+  ${OuterShadow}
 `;
 
 const Subjects = styled.div`
@@ -83,6 +87,7 @@ const Subjects = styled.div`
   font-family: "Montserrat Alternates";
   font-size: 25px;
   ${Color}
+  ${OuterShadow}
 `;
 const Subject = styled.div`
   display: flex;
