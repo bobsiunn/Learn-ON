@@ -30,22 +30,25 @@ def video_spliting(INPUT_VIDEO, output_name):
 
     # (로컬 기준) 같은 프로젝트 파일 내에 있는 mp4 영상을 clip에 저장
     clip = VideoFileClip(INPUT_VIDEO)
-    duration = int(clip.duration)
 
-    # 영상을 자를 단위: s 단위
-    step = 60
-    time = 0
+    # duration = int(clip.duration)
 
-    while duration-time > step:
-        clip_t = clip.subclip(time, time+60)
-        clip_t.audio.write_audiofile(
-            f"{OUTPUT_AUDIO_FOLDER}/{output_name}({int(time/step)}).mp3")
-        time += step
+    # # 영상을 자를 단위: s 단위
+    # step = 60
+    # time = 0
 
-    clip_t = VideoFileClip(INPUT_VIDEO).subclip(time, duration)
-    clip_t.audio.write_audiofile(
-        f"{OUTPUT_AUDIO_FOLDER}/{output_name}({int(time/step)}).mp3")
+    # while duration-time > step:
+    #     clip_t = clip.subclip(time, time+60)
+    #     clip_t.audio.write_audiofile(
+    #         f"{OUTPUT_AUDIO_FOLDER}/{output_name}({int(time/step)}).mp3")
+    #     time += step
 
+    # clip_t = VideoFileClip(INPUT_VIDEO).subclip(time, duration)
+    # clip_t.audio.write_audiofile(
+    #     f"{OUTPUT_AUDIO_FOLDER}/{output_name}({int(time/step)}).mp3")
+
+    clip.audio.write_audiofile(
+        f"{OUTPUT_AUDIO_FOLDER}/{output_name}.mp3")
     clip.close()
 
 
