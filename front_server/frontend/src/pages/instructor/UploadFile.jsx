@@ -51,10 +51,12 @@ class UploadFile extends Component {
                 <Frame width={'70vh'} height={'70vh'}>
                     <div style={{marginTop: '50px'}}>Learn ON</div>
                     <DropBox width={'40vh'} height={'30vh'}>
-                        {this.state.isHidden && <StyledButton width={'30h'} height={'5vh'} onClick={this.toggleHidden.bind(this)}>
+                        {this.state.isHidden &&
+                        <StyledButton width={'30h'} height={'5vh'} onClick={this.toggleHidden.bind(this)}>
                             Search lecture video
                         </StyledButton>}
-                        {!this.state.isHidden && <StyledButton width={'25vh'} height={'5vh'}>
+                        {!this.state.isHidden &&
+                        <StyledButton width={'25vh'} height={'5vh'}>
                             Upload video
                         </StyledButton>}
                     </DropBox>

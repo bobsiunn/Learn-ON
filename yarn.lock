@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+"@iconify/icons-radix-icons@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-radix-icons/-/icons-radix-icons-1.1.2.tgz#c7bb4caac936b118c288c9cdb4528e895472dcb9"
+  integrity sha512-Mm2+eEOjzFqwVnCem/Ni4BPWAQN/jMw/qgfXkYbxL5qRjeBunNIi3IH1ii5BYF70Nf95mU63fh3tXqPyLVsuQQ==

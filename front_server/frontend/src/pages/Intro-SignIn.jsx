@@ -27,9 +27,11 @@ class IntroSignIn extends Component {
                         </div>
                     </form>
                     <div>
-                        <StyledButton width={'30vh'} height={'5vh'}>
-                            Sign In
-                        </StyledButton>
+                        <Link to={"/student/dashboard"} style={{ textDecoration: 'none' }}>
+                            <StyledButton width={'30vh'} height={'5vh'}>
+                                Sign In
+                            </StyledButton>
+                        </Link>
                         <ButtonForm>
                             <Link to={"/signup"} style={{ textDecoration: 'none' }}><InvisibleButton>Sign Up</InvisibleButton></Link>
                             <InvisibleButton>Forgot Password?</InvisibleButton>
