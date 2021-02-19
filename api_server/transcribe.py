@@ -3,10 +3,10 @@ import pandas as pd
 import time
 import boto3
 
-transcribe = boto3.client('transcribe')
-
 
 def check_job_name(job_name):
+    transcribe = boto3.client('transcribe')
+
     job_verification = True
     # all the transcriptions
     existed_jobs = transcribe.list_transcription_jobs()
@@ -21,7 +21,7 @@ def check_job_name(job_name):
         if command.lower() == "y" or command.lower() == "yes":
             transcribe.delete_transcription_job(TranscriptionJobName=job_name)
         elif command.lower() == "n" or command.lower() == "no":
-            ob_name = input("Insert new job name? ")
+            job_name = input("Insert new job name? ")
             check_job_name(job_name)
         else:
             print("Input can only be (Y/N)")
@@ -33,7 +33,9 @@ def check_job_name(job_name):
 
 
 def amazon_transcribe(audio_file_name):
-    job_uri = "https://kpmg-gobongbob.s3.us-east-2.amazonaws.com/input_video/videoplayback.mp4"
+    transcribe = boto3.client('transcribe')
+
+    job_uri = "https://kpmg-gobongbob.s3.us-east-2.amazonaws.com/input_video/" + audio_file_name
     job_name = (audio_file_name.split('.')[0]).replace(" ", "")
     file_format = audio_file_name.split('.')[1]
 
@@ -71,4 +73,4 @@ def amazon_transcribe(audio_file_name):
     # print(data['results'][1][0]['transcript'])
 
 
-transcribe_result, transcribe_data = amazon_transcribe("videoplayback.mp4")
+# transcribe_result, transcribe_data = amazon_transcribe("videoplayback.mp4")
