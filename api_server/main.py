@@ -10,7 +10,9 @@ from uploading_to_s3 import upload_file
 from transcribe import *
 from getting_keyword import *
 
+# 해당 경로에 upload할 video를 저장합니다.
 FILE_PATH = "./api_server/input_video/"
+# 넣은 video file의 명칭을 적어줍니다.
 input_video = "videoplayback.mp4"
 
 
