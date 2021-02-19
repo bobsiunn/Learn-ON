@@ -4,7 +4,7 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
-file_name = "./api_server/input_video/example.mp4"
+file_name = "./api_server/input_video/videoplayback.mp4"
 
 
 def upload_file(file_name, bucket, object_name=None):
