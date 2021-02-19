@@ -7,7 +7,6 @@ transcribe = boto3.client('transcribe')
 job_uri = "https://kpmg-gobongbob.s3.us-east-2.amazonaws.com/input_video/example.mp4"
 job_name = job_uri[62:].rstrip(".mp4")
 
-
 transcribe.start_transcription_job(
     TranscriptionJobName=job_name,
     Media={'MediaFileUri': job_uri},
@@ -27,3 +26,4 @@ if result['TranscriptionJob']['TranscriptionJobStatus'] == "COMPLETED":
                         ['Transcript']['TranscriptFileUri'])
 
 print(data['results'][1][0]['transcript'])
+>>>>>> > upstream/main

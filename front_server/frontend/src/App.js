@@ -1,8 +1,9 @@
 import React from 'react';
-import Intro1 from "./pages/intro";
+import GlobalStyle from "./styles/globalStyle";
+import Routers from "./Routers";
 
+import { BrowserRouter } from "react-router-dom";
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,14 +16,15 @@ class App extends React.Component {
         .then(data=>this.setState({username:data.username}));
   }
   render() {
-    const {username} = this.state;
     return (
-        <div className="App">
-          <Intro1/>
-        </div>
+        <BrowserRouter>
+          <GlobalStyle/>
+          <Routers/>
+        </BrowserRouter>
     );
     ;
   }
 }
 
 export default App;
+
