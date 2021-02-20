@@ -7,7 +7,7 @@ AI-based online re-education assistent
 <h3> 1. R&R </h3>
 <div id="about_team">
 
-|  <center>Name</center> |  <center>Major</center> |  <center>Roll</center> |
+|  <center>Name</center> |  <center>Major</center> |  <center>Role</center> |
 |:--------|:--------:|--------:|
 |**bob.siunn** | <center>BA & CS </center> |Data selection and engineering |
 |**Yongwook Lee** | <center>CS </center> |UIUX design and front end developer |
