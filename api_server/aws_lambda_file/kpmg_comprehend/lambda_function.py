@@ -38,25 +38,47 @@ def lambda_handler(event, context):
         data = obj.get()['Body'].read().decode('utf-8')
         data = json.loads(data)
         transcript = data['results']["transcripts"][0]['transcript']
-        print(transcript)
 
-        result, times, words = making_times_words_list(data)
-        keywords = gettig_keywords(result)
-        index_all = indexing_each_words(keywords, words)
-        is_straight = defining_is_straight(index_all)
-        json_val = matching_keyword_timeline(is_straight, times, index_all)
-        # use Amazon comprehend to detect key_phrases in the text
-        #key_phrases = comprehend_client.detect_key_phrases(Text=transcript, LanguageCode='en')
+        length = len(transcript)
+
+        if length <= 100:
+            output = json.dumps(
+                {"transcript": "Too Short", "keyword": "nothing"})
+            output = str(output)
+        elif length > 5000:
+            output = json.dumps(
+                {"transcript": "Too Long", "keyword": "nothing"})
+            output = str(output)
+        else:
+            result, times, words = making_times_words_list(data)
+            keywords = gettig_keywords(result)
+            index_all = indexing_each_words(keywords, words)
+            is_straight = defining_is_straight(index_all)
+            json_val = matching_keyword_timeline(is_straight, times, index_all)
+            # use Amazon comprehend to detect key_phrases in the text
+            #key_phrases = comprehend_client.detect_key_phrases(Text=transcript, LanguageCode='en')
+
+            json_val = json.loads(json_val)
+
+            output = dict()
+            output["transcript"] = transcript
+            output["keyword"] = json_val
+
+            output = json.dumps(output)
+
+            # print(output)
+            # print(type(output))
+            # print(output)
+            output = str(output)
+            # print(type(output))
 
         # write results of entity analysis
         output_bucket = output_s3
-        output_key = 'entityanalysis-' + key
+        output_key = 'keyparseanalysis-' + key
         output_obj = boto3.resource('s3').Object(output_bucket, output_key)
-        output_obj.put(Body=json_val)
+        output_obj.put(Body=output)
 
     # return the entities that were detected.
     return {
-        'statusCode': 200,
-        'transcript': transcript,
-        "key_phrases": json_val
+        'statusCode': 200
     }
