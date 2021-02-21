@@ -16,22 +16,42 @@ class Lecture extends Component {
         super(props);
         this.state={
             Keyword : {"places": ["21.4", "233.33", "246.69", "272.54"], "a graph": ["4.71", "9.21"], "a nice graph": ["9.99"], "inflection points": ["3.29", "16.48", "18.81", "244.82", "258.04"], "T independent variable T": ["11.96"], "the inflection points": ["16.34", "244.5"], "the function f": ["11.09"], "this video": ["0.54"]}
-            ,isHidden : true
+            ,isHidden1 : true,isHidden2 : true,isHidden3 : true,isHidden4 : true,isHidden5 : true,isHidden6 : true, isHidden7: true
         }
     }
-    componentDidMount() {
-        fetch('http://localhost:3001/student/lecture')
-            .then((response) => {
-                if(response.data){
-                    console.log(response.data)
-                } else {
-                    alert('연동 실패')
-                }
-            })
-    }
-    toggleHidden () {
+    toggleHidden1 () {
         this.setState({
-            isHidden: !this.state.isHidden
+            isHidden1: !this.state.isHidden1
+        })
+    }
+    toggleHidden2 () {
+        this.setState({
+            isHidden2: !this.state.isHidden2
+        })
+    }
+    toggleHidden3 () {
+        this.setState({
+            isHidden3: !this.state.isHidden3
+        })
+    }
+    toggleHidden4 () {
+        this.setState({
+            isHidden4: !this.state.isHidden4
+        })
+    }
+    toggleHidden5 () {
+        this.setState({
+            isHidden5: !this.state.isHidden5
+        })
+    }
+    toggleHidden6 () {
+        this.setState({
+            isHidden6: !this.state.isHidden6
+        })
+    }
+    toggleHidden7 () {
+        this.setState({
+            isHidden7: !this.state.isHidden7
         })
     }
     render() {
@@ -78,33 +98,36 @@ class Lecture extends Component {
                             fontSize: '20px',
                             marginTop: '2vw'
                         }}>
-                            places<br/>
+                            <div onClick={this.toggleHidden1.bind(this)}> places<br/> </div>
                             00:21 03:53 04:06 04:32<br/>
                             <br/>
-                            a graph<br/>
+                            <div onClick={this.toggleHidden2.bind(this)}>a graph<br/></div>
                             00.04 00.09<br/>
                             <br/>
-                            a nice graph<br/>
-                            00.09<br/>
-                            <br/>
-                            <p onClick={this.toggleHidden.bind(this)}> inflection points </p>
+                            <div onClick={this.toggleHidden3.bind(this)}> inflection points </div>
                             00:03 00:16 00:18 04:04 04:18<br/>
                             <br/>
-                            T independent variable T<br/>
+                            <div onClick={this.toggleHidden4.bind(this)}>T independent variable T<br/></div>
                             11:96<br/>
                             <br/>
-                            the inflection points<br/>
+                            <div onClick={this.toggleHidden5.bind(this)}>the inflection points<br/></div>
                             00:16 04:04<br/>
                             <br/>
-                            the fuction f<br/>
+                            <div onClick={this.toggleHidden6.bind(this)}>the function f<br/></div>
                             00:11<br/>
                             <br/>
-                            this video<br/>
+                            <div onClick={this.toggleHidden7.bind(this)}>this video<br/></div>
                             00:00<br/>
                         </div>
                     </div>
                 </Frame>
-                {!this.state.isHidden && <Modal/>}
+                {!this.state.isHidden1 && <Modal1/>}
+                {!this.state.isHidden2 && <Modal2/>}
+                {!this.state.isHidden3 && <Modal3/>}
+                {!this.state.isHidden4 && <Modal4/>}
+                {!this.state.isHidden5 && <Modal5/>}
+                {!this.state.isHidden6 && <Modal6/>}
+                {!this.state.isHidden7 && <Modal7/>}
                 <img
                     src={buttonBg}
                     width='10%'
@@ -115,23 +138,105 @@ class Lecture extends Component {
         );
     }
 }
-
-class Modal extends Component{
+class Modal1 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '15vh',
+                alignItems: 'flex-start',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',
+                fontSize: '18px',
+                marginTop: '-600px', borderRadius: '20px' , paddingRight: '30px', paddingLeft: '30px'}}>
+                00:21 Well, remember, inflection points are places where the con cavity changes, so it's a good idea to remember what Con cavity is.
+                <br/>03:53 Then we turned down So these green points of the places where we change the direction in which returning and the white along the white intervals were turning up along the red intervals were turning down.
+                <br/>04:06 These are the places where we change the direction in which returning. So in this case it looks like there are altogether five inflection points.
+                <br/>04:32 Those are the places where the can cavity changes",
+            </Frame>
+        );
+    }
+}
+class Modal2 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',alignItems: 'flex-start',
+                fontSize: '18px',
+                marginTop: '-450px', borderRadius: '20px' , paddingRight: '30px', paddingLeft: '30px'}}>
+                00.04 this video is going to explain how to find inflection points on a graph.
+                <br/>00.09 So let's suppose we have a graph.
+            </Frame>
+        );
+    }
+}
+class Modal3 extends Component{
     render() {
         return(
             <Frame style={{position:'absolute', width: '50vw', height: '10vh',
                 fontFamily: 'Montserrat Alternates',
                 color: '#2e4467',
-                fontSize: '18px',
-                marginTop: '-150px', borderRadius: '20px'}}>
+                fontSize: '18px',alignItems: 'flex-start',
+                marginTop: '-200px', borderRadius: '20px', paddingRight: '30px', paddingLeft: '30px'}}>
                 00:03 This video is going to explain how to find inflection points on a graph. So let's suppose we have a graph. <br/>
                 00:16 This is the function f of T independent variable T and were asked to find What are the inflection points? <br/>
-                00:18 Well, remember, inflection points are places where the con cavity changes, so it's a good idea to remember<br/>what Con cavity is. <br/>
+                00:18 Well, remember, inflection points are places where the con cavity changes, so it's a good idea to remember what Con cavity is. <br/>
             </Frame>
         );
     }
 }
-
+class Modal4 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',
+                fontSize: '18px',alignItems: 'flex-start',
+                marginTop: '-80px', borderRadius: '20px', paddingRight: '30px', paddingLeft: '30px'}}>
+                11:96 This is the function f of T independent variable T and were asked to find What are the inflection points?
+            </Frame>
+        );
+    }
+}
+class Modal5 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',alignItems: 'flex-start',
+                fontSize: '18px',
+                marginTop: '60px', borderRadius: '20px', paddingRight: '30px', paddingLeft: '30px'}}>
+                00:16 This is the function f of T independent variable T and were asked to find What are the inflection points?
+                <br/>04:04 So these, in fact, are the inflection points.
+            </Frame>
+        );
+    }
+}
+class Modal6 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',alignItems: 'flex-start',
+                fontSize: '18px',
+                marginTop: '200px', borderRadius: '20px', paddingRight: '30px', paddingLeft: '30px'}}>
+                00:11 This is the function f of T independent variable T and were asked to find What are the inflection points?
+            </Frame>
+        );
+    }
+}
+class Modal7 extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',
+                fontSize: '18px',alignItems: 'flex-start',
+                marginTop: '400px', borderRadius: '20px', paddingRight: '30px', paddingLeft: '30px'}}>
+                00:00 This video is going to explain how to find inflection points on a graph. So let's suppose we have a graph.
+            </Frame>
+        );
+    }
+}
 export default Lecture;
 
 const Menu = styled.div`
