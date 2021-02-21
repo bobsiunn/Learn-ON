@@ -6,8 +6,18 @@ import styled from "styled-components";
 import Wrapper from "../../components/Wrapper";
 import Color from "../../styles/Color";
 import OuterShadow from "../../styles/OuterShadow";
+import ReactPlayer from "react-player";
+import myVideo from '../../assets/example1.mp4';
+import buttonBg from "../../assets/Group 12.png";
+import Img1 from "../../assets/financial-administration-flat-vector-illustration_82574-8831.jpg";
 
 class Lecture extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            Keyword : {"places": ["21.4", "233.33", "246.69", "272.54"], "a graph": ["4.71", "9.21"], "a nice graph": ["9.99"], "inflection points": ["3.29", "16.48", "18.81", "244.82", "258.04"], "T independent variable T": ["11.96"], "the inflection points": ["16.34", "244.5"], "the function f": ["11.09"], "this video": ["0.54"]}
+        }
+    }
     render() {
         return (
             <Wrapper>
@@ -22,29 +32,67 @@ class Lecture extends Component {
                         Fundamentals of Blockchain
                     </div>
                 </Menu>
-                <Frame width={'70vw'} height={'80vh'} style={{alignItems: "flex-start", justifyContent: "flex-start"}}>
-                    <div style={{
-                        fontFamily: 'Montserrat Alternates Semibold',
-                        color: '#2e4467',
-                        fontSize: '36px',
-                        marginTop: "2vw",
-                        marginLeft: "2vw"
-                    }}>
-                        My Subjects
-                    </div>
-
+                <Frame width={'70vw'} height={'80vh'} >
+                    <ReactPlayer
+                        className='react-player fixed-bottom'
+                        url= {myVideo}
+                        width='100%'
+                        height='100%'
+                        borderradius='50px'
+                        controls = {true}
+                    />
                 </Frame>
                 <Frame width={'17vw'} height={'80vh'} style={{marginLeft: '3vw', justifyContent: "flex-start"}}>
                     <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                         fontFamily: 'Montserrat Alternates Semibold',
                         color: '#2e4467',
                         fontSize: '30px',
                         marginTop: '2vw'
                     }}>
-                        Recently Learned
+                        Bookmarks
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            fontFamily: 'Montserrat Alternates Semibold',
+                            color: '#2e4467',
+                            fontSize: '20px',
+                            marginTop: '2vw'
+                        }}>
+                            places<br/>
+                            00:21 03:53 04:06 04:32<br/>
+                            <br/>
+                            a graph<br/>
+                            00.04 00.09<br/>
+                            <br/>
+                            a nice graph<br/>
+                            00.09<br/>
+                            <br/>
+                            inflection points<br/>
+                            00:03 00:16 00:18 04:04 04:18<br/>
+                            <br/>
+                            T independent variable T<br/>
+                            11:96<br/>
+                            <br/>
+                            the inflection points<br/>
+                            00:16 04:04<br/>
+                            <br/>
+                            the fuction f<br/>
+                            00:11<br/>
+                            <br/>
+                            this video<br/>
+                            00:00<br/>
+                        </div>
                     </div>
-                    {/*TODO: Recently Learned 항목 추가*/}
                 </Frame>
+                <img
+                    src={buttonBg}
+                    width='10%'
+                    alt='Principles of Economics 1'
+                    style={{position: "absolute", top: '10px', right: '10px'}}/>
             </Wrapper>
         );
     }
@@ -91,4 +139,9 @@ const NameForm = styled.div`
   font-size: 20px;
   justify-content: space-between;
   ${Color}  
+`;
+
+const ChatButton = styled.button`
+  position : absolute;
+  
 `;

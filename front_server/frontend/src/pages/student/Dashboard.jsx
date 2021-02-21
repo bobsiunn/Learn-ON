@@ -49,20 +49,22 @@ class Dashboard extends Component {
                                 <div style={{fontFamily: "Kakao OTF Regular"}}>신혜원 교수님</div>
                             </NameForm>
                         </Subject>
-                        <Link to={"/student/lecture"}>
+
                         <Subject>
+                            <Link to={"/student/lecture"} width='100%' height='80%'>
                             <img
                                 src={Img2}
                                 width='100%'
-                                height='80%'
+                                height='100%'
                                 alt='Financial Management'
                                 style={{borderRadius: '20px 20px 0 0'}}/>
+                            </Link>
                             <NameForm>
                                 <div>Financial Management</div>
                                 <div style={{fontFamily: "Kakao OTF Regular"}}>서정원 교수님</div>
                             </NameForm>
                         </Subject>
-                        </Link>
+
                         <Subject>
                             <img
                                 src={Img3}
