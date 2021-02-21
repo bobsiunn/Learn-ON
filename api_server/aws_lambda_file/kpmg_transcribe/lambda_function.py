@@ -12,6 +12,24 @@ def create_uri(bucket_name, file_name):
     return "s3://"+bucket_name+"/"+file_name
 
 
+def check_job_name(job_name):
+    transcribe = boto3.client('transcribe')
+
+    job_verification = True
+    # all the transcriptions
+    existed_jobs = transcribe.list_transcription_jobs()
+
+    for job in existed_jobs['TranscriptionJobSummaries']:
+        if job_name == job['TranscriptionJobName']:
+            job_verification = False
+            break
+
+    if job_verification == False:
+        transcribe.delete_transcription_job(TranscriptionJobName=job_name)
+
+    return job_name
+
+
 def lambda_handler(event, context):
 
     # 새로운 객체가 들어오는지 체크되는 s3 버킷은 aws lambda의 트리거를 통해서 지정해줘야 합니다.
@@ -38,7 +56,9 @@ def lambda_handler(event, context):
         key = str(record['s3']['object']['key'])
         s3_uri = create_uri(bucket, key)
         file_type = "mp4"
-        job_name = context.aws_request_id
+        job_name = key
+
+        job_name = check_job_name(job_name)
 
         transcribe_client.start_transcription_job(TranscriptionJobName=job_name,
                                                   OutputBucketName=output_s3,
