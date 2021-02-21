@@ -1,4 +1,4 @@
-import React, {Component, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import Dropzone,  {useDropzone} from "react-dropzone";
 import axios from "axios";
 
@@ -34,24 +34,30 @@ export default function MyDropzone() {
     };
 
     return (
-        <Dropzone {...RootProps} maxSize={100} multiple={false}>
-            <input {...InputProps} />
-            {isDragActive ? (
-                <p>이제 이미지를 놓아주세요</p>
-            ) : (
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    <div style={{ fontSize: "3em", marginBottom: "5px" }}>
-                        <i className="fas fa-file-upload"></i>
-                    </div>
-                    <div>이미지 드랍 or 클릭</div>
-                </div>
-            )}
+        <Dropzone maxSize={100} multiple={false}>
+            {RootProps => {
+                return(
+                    <>
+                <input {...InputProps} />
+                {
+                    isDragActive ? (
+                        <p>이제 이미지를 놓아주세요</p>
+                    ) : (
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}
+                        >
+                            <div style={{fontSize: "1em", marginBottom: "5px"}}>
+                                <i className="fas fa-file-upload"></i>
+                            </div>
+                            <div>이미지 드랍 or 클릭</div>
+                        </div>
+                    )
+                }</>)
+            }}
         </Dropzone>
     );
 }
