@@ -11,6 +11,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use("/api/video", require("./routes/index"));
+app.use("/student", route);
 
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

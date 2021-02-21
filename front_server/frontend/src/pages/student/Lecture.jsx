@@ -16,7 +16,23 @@ class Lecture extends Component {
         super(props);
         this.state={
             Keyword : {"places": ["21.4", "233.33", "246.69", "272.54"], "a graph": ["4.71", "9.21"], "a nice graph": ["9.99"], "inflection points": ["3.29", "16.48", "18.81", "244.82", "258.04"], "T independent variable T": ["11.96"], "the inflection points": ["16.34", "244.5"], "the function f": ["11.09"], "this video": ["0.54"]}
+            ,isHidden : true
         }
+    }
+    componentDidMount() {
+        fetch('http://localhost:3001/student/lecture')
+            .then((response) => {
+                if(response.data){
+                    console.log(response.data)
+                } else {
+                    alert('연동 실패')
+                }
+            })
+    }
+    toggleHidden () {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
     }
     render() {
         return (
@@ -71,7 +87,7 @@ class Lecture extends Component {
                             a nice graph<br/>
                             00.09<br/>
                             <br/>
-                            inflection points<br/>
+                            <p onClick={this.toggleHidden.bind(this)}> inflection points </p>
                             00:03 00:16 00:18 04:04 04:18<br/>
                             <br/>
                             T independent variable T<br/>
@@ -88,12 +104,29 @@ class Lecture extends Component {
                         </div>
                     </div>
                 </Frame>
+                {!this.state.isHidden && <Modal/>}
                 <img
                     src={buttonBg}
                     width='10%'
                     alt='Principles of Economics 1'
                     style={{position: "absolute", top: '10px', right: '10px'}}/>
             </Wrapper>
+        );
+    }
+}
+
+class Modal extends Component{
+    render() {
+        return(
+            <Frame style={{position:'absolute', width: '50vw', height: '10vh',
+                fontFamily: 'Montserrat Alternates',
+                color: '#2e4467',
+                fontSize: '18px',
+                marginTop: '-150px', borderRadius: '20px'}}>
+                00:03 This video is going to explain how to find inflection points on a graph. So let's suppose we have a graph. <br/>
+                00:16 This is the function f of T independent variable T and were asked to find What are the inflection points? <br/>
+                00:18 Well, remember, inflection points are places where the con cavity changes, so it's a good idea to remember<br/>what Con cavity is. <br/>
+            </Frame>
         );
     }
 }

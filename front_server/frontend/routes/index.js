@@ -6,7 +6,8 @@ const fs = require('fs');
 const AWS = require('aws-sdk');
 const BUCKET_NAME = 'kpmg-input-video';
 const DBUCKET_NAME = 'kpmg-output-text';
-const s3 = new AWS.S3({accessKeyId: "AKIAVHYZ6YW6JVU6SKDS ", secretAccessKey: "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 "});
+
+const s3 = new AWS.S3();
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -35,7 +36,7 @@ router.post("/uploadfiles", (req, res) => {
         if (err) {
             return res.json({ success: false, err });
         }
-        console.log(res.req.file.path);
+        // console.log(res.req.file.path);
         uploadFile(res.req.file.filename);
         return res.json({
             success: true,
@@ -57,23 +58,20 @@ const uploadFile = (fileName) => {
     });
 };
 
-// 트랜스크립트 다운로드 부분, 키워드 다운로드 부분 만들고 json 슬라이싱 해서 필요한 정보 출력하는 페이지(lecture), 그리고 영상 출력 부분도 해야댐
-// router.get("/Lecture", (req, res) => {
+router.get("/lecture", () => {
+    downloadFile('./downloads/test.json');
+    });
 
-//     downloadFile(`../downloads/${fileName}.json`, `'keyparseanalysis'+${fileName}`)
-// })
-
-
-// const downloadFile = (filePath, key) => {
-//     const dparams = {
-//         Bucket : DBUCKET_NAME,
-//         Key: key
-//     };
-//     s3.getObject(dparams, (err, data) => {
-//         if(err) console.error(err);
-//         fs.writeFileSync(filePath, data.Body);
-//         console.log(`${filePath} has been created!`);
-//     });
-// };
+const downloadFile = (dfilename) => {
+    const dparams = {
+        Bucket : DBUCKET_NAME,
+        Key: 'example1.mp4.json'
+    };
+    s3.getObject(dparams, (err, data) => {
+        if(err) throw err;
+        fs.writeFileSync(dfilename, data.Body.toString());
+        console.log(`${dfilename} has been created!`);
+    });
+};
 
 module.exports = router;
