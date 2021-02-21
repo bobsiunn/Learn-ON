@@ -3,7 +3,6 @@ import {Icon} from '@iconify/react';
 import hamburgerMenu from '@iconify/icons-radix-icons/hamburger-menu';
 import Frame from "../../components/Frame";
 import styled from "styled-components";
-import StyledButton from "../../components/StyledButton";
 import Img1 from "../../assets/financial-administration-flat-vector-illustration_82574-8831.jpg";
 import Img2 from "../../assets/financial-management-vector-illustration-flat_159144-69.jpg";
 import Img3 from "../../assets/istockphoto-1080436866-612x612.jpg";
@@ -50,6 +49,7 @@ class Dashboard extends Component {
                                 <div style={{fontFamily: "Kakao OTF Regular"}}>신혜원 교수님</div>
                             </NameForm>
                         </Subject>
+                        <Link to={"/student/lecture"}>
                         <Subject>
                             <img
                                 src={Img2}
@@ -62,6 +62,7 @@ class Dashboard extends Component {
                                 <div style={{fontFamily: "Kakao OTF Regular"}}>서정원 교수님</div>
                             </NameForm>
                         </Subject>
+                        </Link>
                         <Subject>
                             <img
                                 src={Img3}
