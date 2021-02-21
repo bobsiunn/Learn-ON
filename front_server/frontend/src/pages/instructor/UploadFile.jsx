@@ -41,34 +41,6 @@ class UploadFile extends Component {
             isHidden: true,
         }
     }
-/*fileHandler = (e) => {
-        const files = e.target.files;
-        this.setState({
-            selectedFiles: files
-        })
-    };
-    onClickHandler = (e) => {
-        const formData = new FormData();
-        formData.append(
-            "uploadImages",
-            this.state.selectedFiles,
-            this.state.selectedFiles.name
-        );
-        const config = {
-            headers: {
-                "content-type": "multipart/form-data",
-                "Access-Control-Allow-Origin": '*'
-            }
-        };
-        axios.defaults.baseURL = "http://localhost:3001/";
-        axios.post(`uploadAPI`, formData, config).then();
-    };*/
-
-    toggleHidden () {
-        this.setState({
-            isHidden: !this.state.isHidden
-        })
-    }
     render() {
         return (
             <Wrapper>
@@ -81,23 +53,24 @@ class UploadFile extends Component {
                             {({ getRootProps, getInputProps }) => (
                                 <div
                                     style={{
-                                        width: '300px',
-                                        height: '240px',
-                                        border: '1px solid lightgray',
+                                        width: '400px',
+                                        height: '300px',
+                                        border: '0',
+                                        borderRadius: '20px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
+                                        boxShadow: 'inset 13px 13px 24px #0d275033,inset -15px -15px 21px #ffffff88'
                                     }}
                                     {...getRootProps()}
                                 >
                                     <input {...getInputProps()} />
-                                    <PlusOutlined style={{ fontSize: '5rem' }} />
+                                    <StyledButton width={'29vh'} height={'5vh'}>
+                                        Upload Videos
+                                    </StyledButton>
                                 </div>
                             )}
                         </Dropzone>
-                        <Button type="primary" size="large" onClick>
-                            Submit
-                        </Button>
                     </div>
                 </Frame>
             </Wrapper>
