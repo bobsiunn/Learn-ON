@@ -72,7 +72,7 @@ class Lecture extends Component {
                         <div style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'flex-start',
+                            alignItems: 'center',
                             fontFamily: 'Montserrat Alternates Semibold',
                             color: '#2e4467',
                             fontSize: '20px',
@@ -110,7 +110,6 @@ class Lecture extends Component {
                     width='10%'
                     alt='Principles of Economics 1'
                     style={{position: "absolute", top: '10px', right: '10px'}}/>
-
             </Wrapper>
         );
     }
