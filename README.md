@@ -20,13 +20,13 @@ AI-based online re-education assistent
 
 ![ex_screenshot](./readimg/LearnON_Introduction.PNG)
 
-
-# Service background  
-
-코로나 19 이후 거리두기가 실행되면서, 오프라인으로 이루어지던 학습의 대부분이 온라인 강의로 전환되고 있습니다.  
-그 결과, 많은 교수자들은 새로운 플랫폼에서 강의를 어떻게 전달해야 할지, 어떻게 하면 심층적인 학습이 가능할지를 고민해야 하는 상황에 놓였으며,  
-학습자들 역시, 오프라인에서 교수자에게 직접 질의를 하기 어려운 환경, 학습의 집중도 측면의 이슈로 인해 어려움을 겪고 있습니다.  
+Learn ON is a AI-based online re-edcation assistent which can overcome online learner's pain point on E-learning process and maximaize the advantages of online learning. As a result, we provide a new paradigm for E-learning.  
   
+![ex_screenshot](./readimg/LearnON_Introduction.PNG)  
+  
+* vision  
+: Learn ON aims to improve the inconvenience and inefficiency of online learning in the face of inevitable online learning with Corona 19, and maximize the advantages and convenience of online learning alone, unlike offline learning.  
+
 이러한 변화는 교육 시장 각지에서 큰 영향을 가져오고 있지만, 그 중 가장 많은 변화를 겪고 있는 것은 대학 강의입니다.  
 소위 입시 시장이라고 불리는 중고등 교육 강의는 여러 대형 학원들을 중심으로 인터넷 강의의 플랫폼이 코로나 19 이전에도 빈번히 활용되었습니다.  
 그렇기에, 코로나 19로 인한 변화에도 유연하게 대응하며 온라인으로 학습이 이루어짐에도 학생들의 심층적인 학습을 유도할 수 있는 커리큘럼과 학습 방식을 발빠르게 제공하고 있습니다.  
