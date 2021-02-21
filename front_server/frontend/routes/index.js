@@ -4,7 +4,8 @@ const router = express.Router();
 const multer = require("multer");
 const fs = require('fs');
 const AWS = require('aws-sdk');
-const BUCKET_NAME = 'jm-tests3';
+const BUCKET_NAME = 'kpmg-input-video';
+const DBUCKET_NAME = 'kpmg-output-text';
 const s3 = new AWS.S3();
 
 let storage = multer.diskStorage({
@@ -34,7 +35,7 @@ router.post("/uploadfiles", (req, res) => {
         if (err) {
             return res.json({ success: false, err });
         }
-        console.log(res.req.file.path);
+        // console.log(res.req.file.path);
         uploadFile(res.req.file.filename);
         return res.json({
             success: true,
@@ -53,6 +54,22 @@ const uploadFile = (fileName) => {
     s3.upload(params, function(err, data) {
         if (err) { throw err; }
         console.log(`File uploaded successfully. ${data.Location}`);
+    });
+};
+
+router.get("/lecture", () => {
+    downloadFile('./downloads/test.json');
+    });
+
+const downloadFile = (dfilename) => {
+    const dparams = {
+        Bucket : DBUCKET_NAME,
+        Key: 'example1.mp4.json'
+    };
+    s3.getObject(dparams, (err, data) => {
+        if(err) throw err;
+        fs.writeFileSync(dfilename, data.Body.toString());
+        console.log(`${dfilename} has been created!`);
     });
 };
 
