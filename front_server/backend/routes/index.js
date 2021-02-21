@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const multer = require("multer");
+const fs = require('fs');
+const AWS = require('aws-sdk');
+const BUCKET_NAME = 'kpmg-input-video';
+const s3 = new AWS.S3();
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -9,16 +13,14 @@ let storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_${file.originalname}`);
-        //파일이름을 현재시간_파일이름.mp4로 저장하겠다는의미(중복방지)
     },
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname);
         if (ext !== ".mp4") {
-            //파일확장자는 mp4만허용 추가하고싶다면 || ext !== '.wmv' 와같이가능
             return cb(res.status(400).end("only mp4 is allowd"), false);
         }
         cb(null, true);
-    },
+    }
 });
 const upload = multer({ storage: storage }).single("file"); //파일하나만업로드하겠다는의미
 
@@ -32,6 +34,7 @@ router.post("/uploadfiles", (req, res) => {
         if (err) {
             return res.json({ success: false, err });
         }
+        console.log(res.req.file.path);
         return res.json({
             success: true,
             url: res.req.file.path, //파일을 저장하게되면 uploads폴더안에 저장되게되는데 그경로를 보내줌
@@ -39,6 +42,17 @@ router.post("/uploadfiles", (req, res) => {
         });
     });
 });
-
+const uploadFile = (fileName) => {
+    const fileContent = fs.readFileSync(fileName);
+    const params = {
+        Bucket: BUCKET_NAME,
+        Key: fileName, // File name you want to save as in S3
+        Body: fileContent
+    };
+    s3.upload(params, function(err, data) {
+        if (err) { throw err; }
+        console.log(`File uploaded successfully. ${data.Location}`);
+    });
+};
 
 module.exports = router;

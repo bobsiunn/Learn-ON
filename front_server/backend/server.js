@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const port =process.env.PORT || 3001;
 const route = require('./routes/index');
 const { uploadImageMulterMiddleware } = require("./middleware");
+const cors = require('cors');
+
+app.use(cors());
 
 
 app.use(bodyParser.json());
-app.use('/api', route);
 app.use("/api/video", require("./routes/index"));
 
 app.all('/*', function(req, res, next) {
