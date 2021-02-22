@@ -5,7 +5,8 @@ const multer = require("multer");
 const fs = require('fs');
 const AWS = require('aws-sdk');
 const BUCKET_NAME = 'kpmg-input-video';
-const DBUCKET_NAME = 'kpmg-output-text';
+
+const DBUCKET_NAME = 'kpmg-keyword';
 
 const s3 = new AWS.S3();
 
@@ -65,7 +66,7 @@ router.get("/lecture", () => {
 const downloadFile = (dfilename) => {
     const dparams = {
         Bucket : DBUCKET_NAME,
-        Key: 'example1.mp4.json'
+        Key: 'keyparseanalysis-1613926544435_example1.mp4.json'
     };
     s3.getObject(dparams, (err, data) => {
         if(err) throw err;
