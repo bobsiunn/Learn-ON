@@ -64,7 +64,7 @@ class UploadFile extends Component {
                                     }}
                                     {...getRootProps()}
                                 >
-                                    <input {...getInputProps()} />
+                                    <input {...getInputProps()} name={"file"}/>
                                     <StyledButton width={'29vh'} height={'5vh'}>
                                         Upload Videos
                                     </StyledButton>
