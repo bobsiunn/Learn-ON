@@ -85,7 +85,7 @@ Learn ON is a AI-based online re-edcation assistent which can overcome online le
 |**Node.js** | <center>15.9.1</center> |
 |**NPM** | <center>7.5.3</center> |
 
-#### Languages and Frameworks 
+#### Used AWS API
 * Amazone S3
 * Amazone Transcribe
 * Amazone Comprehend
