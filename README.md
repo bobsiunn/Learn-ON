@@ -11,7 +11,7 @@ AI-based online re-education assistent
 |:--------|:--------:|--------:|
 |**bob.siunn** | <center>BA & CS </center> |Data selection and engineering |
 |**Yongwook Lee** | <center>CS </center> |UIUX design and front end developer |
-|**Lee Jeong Min** | <center>CS </center> |Server deployment and link |
+|**Lee Jeong Min** | <center>BA & CS </center> |Server deployment and link |
 |**skyriver228** | <center>Biomedical Convergence Engineering </center> | ML Modeling |
 |**Sarah Son** | <center>BA </center> | Data collecting and documentation |
 
