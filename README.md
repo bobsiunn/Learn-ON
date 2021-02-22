@@ -89,3 +89,9 @@ Learn ON is a AI-based online re-edcation assistent which can overcome online le
 * Amazone S3
 * Amazone Transcribe
 * Amazone Comprehend
+
+#### About Structure  
+* Entire Structure  
+: Go to wiki/about entire structure  
+* ML Structure  
+: Go to wiki/about ML structure  
