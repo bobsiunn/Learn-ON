@@ -49,3 +49,43 @@ Learn ON is a AI-based online re-edcation assistent which can overcome online le
     * At any time, you can selectively find and relearn only the necessary parts of the long lecture video, and you can search for the timeline of the parts you need through keyword input.  
     * By storing the desired parts, the efficiency of relearning them several times can be greatly expected.  
     * Because AI assistant can be learned through questions without burden, it can greatly complements the lack of interactions between professors and learners online. 
+
+
+<h3> 3. Usage </h3>
+<div id="about_Usage">
+
+#### Server Link
+: http://13.125.220.170:3000/  
+
+#### Follow this step
+1. Type ID & Password (there is login page but It's okay to pass because we didn't implement the membership function.)  
+2. Click Financial Management subject on the Dashboard page (The actual lecture video name is "Differential calculus 1.")  
+3. You can play lecture video on left page  
+4. You can find bookmarks of main keyword on the right
+5. If you click the keyword, you can see text of that keyword in lecture video
+
+#### Warnings
+1. This server is accessible only when the terminal is open. If the server is closed and the execution is not normal, please contact to us on Slack.
+2. There is a limit on the length and capacity of the video uploaded on the lecture video upload screen due to the limitations of the API. 
+3. Please avoid trying to upload mp4 file on video upload page and move straight to the video play page.
+4. Nevertheless, if you want to try the video upload function, please try the "example1.mp4" video file in the Google Drive folder we provided.
+
+<h3> 4. How we built it </h3>
+<div id="about_How we built it">
+ 
+#### Languages and Frameworks  
+|  <center>Language and Frameworks</center> |  <center>Version</center> |
+|:--------|:--------:|
+|**Python** | <center>3.7.4</center> |
+|**Jupyter Notebook** | <center> - </center> |
+|**Express** | <center>4.17.1</center> |
+|**React** | <center>17.0.1</center> |
+|**React Player** | <center>2.9.0</center> |
+|**React Dropzone** | <center>11.3.1</center> |
+|**Node.js** | <center>15.9.1</center> |
+|**NPM** | <center>7.5.3</center> |
+
+#### Languages and Frameworks 
+* Amazone S3
+* Amazone Transcribe
+* Amazone Comprehend
